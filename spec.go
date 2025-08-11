@@ -198,6 +198,11 @@ func (s *Spec) ContainsSymbol(symbolName string) bool {
 	return s.spec.TypeByName(symbolName, &funcType) == nil
 }
 
+// AnyTypesByName returns a btf Type interface for the given name. This can then be cast to a more specific btf type.
+func (s *Spec) AnyTypesByName(name string) ([]btf.Type, error) {
+	return s.spec.AnyTypesByName(name)
+}
+
 func (b *btfSpecWrapper) AnyTypesByName(name string) ([]btf.Type, error) {
 	return b.spec.AnyTypesByName(name)
 }
