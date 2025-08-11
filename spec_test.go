@@ -144,7 +144,7 @@ func TestSpec_ContainsSymbol(t *testing.T) {
 	require.True(t, mockSpec.ContainsSymbol("dentry"))
 }
 
-func TestSpec_GetType(t *testing.T) {
+func TestSpec_AnyTypesByName(t *testing.T) {
 	mockSpec := &Spec{
 		spec: newMockedBTFSpecWithTypesMap(map[string]btf.Type{
 			"dentry": &btf.Func{},
