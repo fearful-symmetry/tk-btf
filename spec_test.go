@@ -152,7 +152,7 @@ func TestSpec_GetType(t *testing.T) {
 		regs: nil,
 	}
 
-	foundType, err := mockSpec.AnyTypesByName("dentry")
+	foundTypes, err := mockSpec.AnyTypesByName("dentry")
 	require.NoError(t, err)
-	require.NotNil(t, foundType)
+	require.Len(t, foundTypes, 1)
 }
